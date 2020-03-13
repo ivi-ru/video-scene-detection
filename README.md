@@ -1,6 +1,6 @@
 # Video Scene Detection based on Optimal Sequential Grouping algorithm
 
-Here you can find implementations of algorithms from the followinf papers:
+Here you can find implementations of algorithms from the following papers:
 
 - Robust and Efficient Video Scene Detection Using Optimal Sequential Grouping [https://ieeexplore.ieee.org/abstract/document/7823628]
 - Optimally Grouped Deep Features Using Normalized Cost for Video Scene Detection [https://dl.acm.org/doi/10.1145/3206025.3206055]
