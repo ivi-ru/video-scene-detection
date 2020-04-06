@@ -1,9 +1,11 @@
+"""Contains methods which divide shots into scenes regarding to H_add metrics."""
+
 import numpy as np
 
 
 def get_optimal_sequence_add(distance_matrix: np.ndarray, scenes_count: int) -> np.ndarray:
     """
-    Calculates dividing shots into scenes regarding to H_add metrics
+    Divide shots into scenes regarding to H_add metrics.
 
     More info in paper: https://ieeexplore.ieee.org/abstract/document/7823628
 
