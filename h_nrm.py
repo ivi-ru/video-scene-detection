@@ -1,4 +1,4 @@
-"""Contains methods which divide shots into scenes regarding to H_nrm metrics."""
+"""Contains methods which help to split shots into scenes using the H_nrm cost function."""
 
 from typing import Set
 
@@ -21,8 +21,8 @@ def distance_sum(distance_matrix: np.ndarray, j1: int, j2: int) -> float:
 @memorize()
 def get_embedded_areas_sums(parent_square_size: int, embedded_squares_count: int) -> Set[int]:
     """
-    Get all possible areas we can get if we divide square with side of parent_square_size
-    on embedded_squares_count parts in recursive manner.
+    Get the set of all possible areas which can found by dividing a square of the sizeparent_square_size
+    into embedded_squares_count subsquares. The function works in the recursive manner.
 
     :param parent_square_size: size of the parent square
     :param embedded_squares_count: count of parts to divide
@@ -45,12 +45,12 @@ def get_embedded_areas_sums(parent_square_size: int, embedded_squares_count: int
 
 def get_optimal_sequence_nrm(distance_matrix: np.ndarray, scenes_count: int) -> np.ndarray:
     """
-    Divide shots into scenes regarding to H_nrm metrics.
+   Divide shots into scenes using the H_nrm cost function.
 
     More info in article: https://www.ibm.com/blogs/research/2018/09/video-scene-detection/
 
-    :param distance_matrix: matrix pf pairwise distances between shots
-    :param scenes_count: number of scenes you want to divide your shots
+    :param distance_matrix: matrix of pairwise distances between shots
+    :param scenes_count: number of resulting scenes
     :return: indexes of the last shot of each scene
     """
     D = distance_matrix

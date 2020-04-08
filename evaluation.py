@@ -1,4 +1,4 @@
-"""Contains functions for interval predictions evaluation."""
+"""Contains functions for the evaluation of the scene detection results."""
 
 from typing import List, Tuple
 
@@ -48,8 +48,8 @@ def precision(
         pred_end: float
 ) -> float:
     """
-    Get precision for two intervals as dividing intersection length
-    by predicted interval length.
+    Get precision by dividing the intersection length of the predicted
+    and the ground truth intervals to the length of the predicted interval.
 
     :param gt_begin: truth start point
     :param gt_end: truth end point
@@ -70,7 +70,8 @@ def recall(
         pred_end: float
 ) -> float:
     """
-    Get recall for two intervals as dividing intersection by truth interval length.
+    Get recall by dividing the intersection length of the predicted
+    and the ground truth intervals to the length of the ground truth interval.
 
     :param gt_begin: truth start point
     :param gt_end: truth end point
@@ -110,7 +111,7 @@ def calculate_interval_metric(
         metric_name: str
 ) -> float:
     """
-    Get mean value of interval metric metric_name.
+    Get the average value of the metric_name metric for the predicted intervals.
 
     :param gt_data: ground truth intervals
     :param pred_data: predicted intervals

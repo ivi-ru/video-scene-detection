@@ -1,4 +1,4 @@
-"""Contains methods which divide shots into scenes regarding to H_add metrics."""
+"""Contains methods which help to split shots into scenes using the H_add cost function."""
 
 import numpy as np
 
@@ -9,8 +9,8 @@ def get_optimal_sequence_add(distance_matrix: np.ndarray, scenes_count: int) -> 
 
     More info in paper: https://ieeexplore.ieee.org/abstract/document/7823628
 
-    :param distance_matrix: matrix pf pairwise distances between shots
-    :param scenes_count: number of scenes you want to divide your shots
+    :param distance_matrix: matrix of pairwise distances between shots
+    :param scenes_count: number of resulting scenes
     :return: indexes of the last shot of each scene
     """
     D = distance_matrix

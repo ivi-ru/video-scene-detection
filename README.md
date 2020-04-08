@@ -1,25 +1,23 @@
-# Video Scene Detection based on Optimal Sequential Grouping algorithm
+# Video Scene Detection Based on the Optimal Sequential Grouping algorithm
 
-Here you can find implementations of algorithms from the following papers:
+Video scene detection is the task of temporally dividing a video into semantic scenes. This repository implements two video scene detection algorithms from the following papers:
 
 - Robust and Efficient Video Scene Detection Using Optimal Sequential Grouping [https://ieeexplore.ieee.org/abstract/document/7823628]
 - Optimally Grouped Deep Features Using Normalized Cost for Video Scene Detection [https://dl.acm.org/doi/10.1145/3206025.3206055]
 
-The task is temporally dividing a video into semantic scenes.
-
-Both papers propose the following steps to achieve the goal:
-- divide a video into shots (sequence of frames from one editing cut to another)
+To accomplish the video scene detection task the next few steps have been proposed in the papers:
+- divide a video into shots (sequences of frames from one editing cut to another)
 - extract an arbitrary set of features from each shot
 - find pairwise distances between feature vectors
-- find such sequence of squares along main diagonal that will be optimal from the point of some cost function
+- split shots into non-intersecting groups by optimizing a distance-based cost function
 
-These squares will represent the desired scenes.
+The resulting groups of shots represent the desired scenes.
 
 The core idea is to solve the problem as an optimization process of sequential grouping task.
 
-The first paper describes optimization of the metric caller H_add – simple sum of distances inside squares.
-The second paper is about H_nrm - improvement of the H_add that use normalization.
+To group shots optimally, one has to solve a sequential grouping task. Two different cost functions are introduced in the papers:
+- A simple one, called H_add, calculates the cost as a sum of the distances between each group's shots.
+- The more sophisticated one, called H_nrm, extends H_add by normalizing the sum of the distances within each of the groups by the size of the group.
+Improved solutions for both cost functions are introduced in this repository.
 
-This repo doesn't contain feature extraction and pairwise distances calculation steps.
-
-Its goal is to demonstrate algorithms implementations on some synthetic data.
+The repository has been created to demonstrate the application of the algorithms on synthetic data. It doesn't contain code that extracts shot features and calculates pairwise distances.
