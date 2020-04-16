@@ -1,0 +1,5 @@
+memorize>=0.1.1
+numpy>=1.18.1
+jupyter
+matplotlib>=3.0.3
+tqdm
