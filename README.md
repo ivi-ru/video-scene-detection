@@ -5,6 +5,8 @@ Video scene detection is the task of temporally dividing a video into semantic s
 - Robust and Efficient Video Scene Detection Using Optimal Sequential Grouping [https://ieeexplore.ieee.org/abstract/document/7823628]
 - Optimally Grouped Deep Features Using Normalized Cost for Video Scene Detection [https://dl.acm.org/doi/10.1145/3206025.3206055]
 
+![H_nrm detection results](imgs/h_nrm_synth_results.png)
+
 To accomplish the video scene detection task the next few steps have been proposed in the papers:
 - divide a video into shots (sequences of frames from one editing cut to another)
 - extract an arbitrary set of features from each shot
