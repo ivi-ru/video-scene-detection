@@ -15,8 +15,6 @@ The resulting groups of shots represent the desired scenes.
 
 ![H_nrm detection results](imgs/h_nrm_synth_results.png)
 
-The core idea is to solve the problem as an optimization process of sequential grouping task.
-
 To group shots optimally, one has to solve a sequential grouping task. Two different cost functions are introduced in the papers:
 - A simple one, called H_add, calculates the cost as a sum of the distances between each group's shots.
 - The more sophisticated one, called H_nrm, extends H_add by normalizing the sum of the distances within each of the groups by the size of the group.
